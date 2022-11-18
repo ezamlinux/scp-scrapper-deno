@@ -1,0 +1,194 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
+
+html {
+  box-shadow: inset 0 0 10rem #020202, inset 0 0 3rem black, 0 0 10rem black;
+}
+
+body {
+  background-color: #01130c;
+  cursor: crosshair;
+}
+
+* {
+  text-align: justify;
+  font-family: "VT323";
+  font-size: 26px;
+  color: #00dd00;
+  text-transform: uppercase;
+}
+
+table tbody tr:nth-child(1) {
+  border: solid;
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  font-size: 26px;
+  background-color: #00dd00;
+}
+table tbody tr:nth-child(1) th {
+  color: #01130c;
+}
+table tbody tr td {
+  font-size: 18px;
+  border: solid;
+}
+h1 {
+  font-family: "Black Ops One", cursive;
+  text-align: center;
+}
+
+@keyframes terminal-glitch {
+  0% {
+    transform: scale(1, 1.5);
+  }
+  50% {
+    transform: scale(1, 1.2);
+  }
+  100% {
+    transform: scale(1.2, 1);
+  }
+}
+
+.terminal-glitch {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 1px 1px rgba(64, 64, 64, 0.1);
+  background: radial-gradient(
+    ellipse at center,
+    darken(#f57c00, 30%) 0%,
+    darken(#f57c00, 100%) 100%
+  );
+  transform-origin: 50% 50%;
+  transform: scale(1.03);
+  animation: terminal-glitch 0.1s linear infinite;
+  opacity: 0.4;
+  position: fixed;
+  z-index: -1;
+}
+/* same color as body bg */
+.invisible {
+  color: #011e13;
+}
+
+sup,
+sub {
+  text-transform: none;
+}
+
+strong,
+strong *,
+#toc1 * {
+  color: white;
+}
+
+blockquote,
+div.email {
+  background-color: #013220;
+  border: dotted #011e13;
+  border-radius: 2.5px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover, a em:hover {
+  color: red;
+}
+
+a:before {
+  color: #00dd00;
+  content: "[";
+}
+
+a:after {
+  color: #00dd00;
+  content: "]";
+}
+
+.scp-image-block.block-right {
+  clear: right;
+  float: right;
+  margin: 0 2em 1em 2em;
+}
+.scp-image-block.block-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+img {
+  border: 1px solid #011e13;
+  border-radius: 5px;
+}
+
+.scp-image-caption, .scp-image-caption p {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.image-container {
+  padding: 1em;
+}
+
+.pastille.rouge {
+  color: #8b0000;
+}
+
+.pastille.jaune {
+  color: yellow;
+}
+
+.pastille.bleu {
+  color: blue;
+}
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "#";
+  color: white;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ol li::marker {
+  color: white;
+}
+
+em::before {
+  content: "“";
+}
+
+em::after {
+  content: "”";
+}
+.yui-navset ul li::before,.yui-navset ol li::before{
+  content: none;
+}
+a em {
+  color: white;
+  font-style: normal;
+}
+a em::before, a em::after {
+  content: none;
+}
+
+.footnotes-footer .title {
+  color: white;
+}
+.aligncenter {
+  text-align: center;
+}
+.document_media {
+  background-color: #013220;
+  border: solid 4px #444444;
+  width: 80%;
+  margin: 10px auto;
+}
+.container {
+  max-width: 1040px;;
+}
