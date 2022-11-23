@@ -7,11 +7,10 @@ html {
 
 body {
   background-color: #01130c;
-  cursor: crosshair;
 }
 
 * {
-  text-align: justify;
+  /* text-align: justify; */
   font-family: "VT323";
   font-size: 26px;
   color: #00dd00;
@@ -66,7 +65,7 @@ h1 {
   z-index: -1;
 }
 /* same color as body bg */
-.invisible {
+.invisible_data, .invisible_data * {
   color: #011e13;
 }
 
@@ -139,7 +138,9 @@ img {
 .pastille.jaune {
   color: yellow;
 }
-
+.pastille.orange {
+  color: orange
+}
 .pastille.bleu {
   color: blue;
 }

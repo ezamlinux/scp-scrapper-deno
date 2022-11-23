@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import Header from "../components/Header.tsx";
+import Nav from "../components/Nav.tsx";
 import { cheerio } from "https://deno.land/x/cheerio@1.0.7/mod.ts";
 
 interface Scp {
@@ -16,19 +17,7 @@ export const handler: Handlers<Scp> = {
     let page_content = {
       __html: ''
     };
-    // const scp_numbers = [
-    //     'scp-001',
-    //     'scp-016',
-    //     'scp-018',
-    //     'scp-1002',
-    //     'scp-2000',
-    //     'scp-3003',
-    //     'scp-3022',
-    //     'scp-5110',
-    //     'scp-5004',
-    //     'scp-035-FR',
-    //     'scantron-s-proposal'
-    // ];
+
     const response = await fetch(url);
     if (response.status === 404) {
       return ctx.renderNotFound();
@@ -57,10 +46,10 @@ export const handler: Handlers<Scp> = {
           }
       })
 
-      // .invisible class for [style="color:white"], remove inline css style
-      $('[style="color:white"]').each((_i, elem) => {
+      // .invisible class for [style="color:white"]
+      $('[style="color:white"], [style="color: white"]').each((_i, elem) => {
           $(elem).removeAttr('style');
-          $(elem).addClass('invisible');
+          $(elem).addClass('invisible_data');
       });
 
       $('[onclick]').each((_i, elem) => {
@@ -89,8 +78,6 @@ export const handler: Handlers<Scp> = {
       });
       // iframe url scp 001
 
-      // convert scp-image-block -> figure ?
-
       // scp-3003 tabview -> bootstrap tab
 
       page_content = {
@@ -105,13 +92,13 @@ export const handler: Handlers<Scp> = {
   }
 }
 
-export default function Home({ data }: PageProps<Scp>) {
+export default function Page({ data }: PageProps<Scp>) {
   return (
     <>
     <Header />
     <div class="terminal-glitch"></div>
     <div class="container">
-      <h1>{data.title}</h1>
+      <Nav page={data.title}/>
       <div dangerouslySetInnerHTML={ data.page_content }></div>
     </div>
     </>
