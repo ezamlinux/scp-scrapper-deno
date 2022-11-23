@@ -8,7 +8,9 @@ html {
 body {
   background-color: #01130c;
 }
-
+.container_error {
+  height: 100vh;
+}
 * {
   /* text-align: justify; */
   font-family: "VT323";
@@ -24,7 +26,8 @@ table tbody tr:nth-child(1) {
   font-size: 26px;
   background-color: #00dd00;
 }
-table tbody tr:nth-child(1) th {
+table tbody tr:nth-child(1) th,table tbody tr:nth-child(1) td {
+  border-color: #00dd00;
   color: #01130c;
 }
 table tbody tr td {
@@ -143,6 +146,9 @@ img {
 }
 .pastille.bleu {
   color: blue;
+}
+.pastille.noir {
+  color: black;
 }
 ul {
   list-style: none;

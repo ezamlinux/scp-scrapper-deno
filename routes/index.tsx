@@ -26,7 +26,7 @@ export const handler: Handlers = {
           for await (const page of urlList.map((_i, link) => fetch(link))) {
             const $ = cheerio.load(await (page.text()));
 
-            $('div#page-content ul li a')
+            $('div#page-content ul li a:not(.newpage)')
             .map((_il, l) => {
               const l_scp = $(l).attr('href');
               const l_text = $(l).text();
